@@ -11,7 +11,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://car-spynee.onrender.com/api/users/register', { username, email, password });
+      const res = await axios.post('https://car-spynee.onrender.com', { username, email, password });
       localStorage.setItem('token', res.data.token);
       const token = localStorage.getItem('token');
       console.log(token);
