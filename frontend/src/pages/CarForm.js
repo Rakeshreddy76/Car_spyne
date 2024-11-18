@@ -14,7 +14,7 @@ function CarForm() {
     if (id) {
       const fetchCar = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/cars/${id}`, {
+          const res = await axios.get(`https://car-spynee.onrender.com/api/cars/${id}`, {
             headers: { 'x-auth-token': localStorage.getItem('token') }
           });
           const { title, description, images, tags } = res.data;
@@ -40,11 +40,11 @@ function CarForm() {
     };
     try {
       if (id) {
-        await axios.put(`http://localhost:5000/api/cars/${id}`, carData, {
+        await axios.put(`https://car-spynee.onrender.com/api/cars/${id}`, carData, {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
       } else {
-        await axios.post('http://localhost:5000/api/cars', carData, {
+        await axios.post('https://car-spynee.onrender.com/api/cars', carData, {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
       }
