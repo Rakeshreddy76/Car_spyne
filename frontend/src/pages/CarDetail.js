@@ -188,7 +188,7 @@ function CarDetail() {
   useEffect(() => {
     const fetchCar = async () => {
       try {
-        const res = await axios.get(`https://car-spynee.onrender.com/api/cars/${id}`, {
+        const res = await axios.get(`https://car-spynee.onrender.com`, {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
         setCar(res.data);
@@ -201,7 +201,7 @@ function CarDetail() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://car-spynee.onrender.com/api/cars/${id}`, {
+      await axios.delete(`https://car-spynee.onrender.com`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       navigate('/cars');
