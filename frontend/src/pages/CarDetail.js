@@ -201,7 +201,7 @@ function CarDetail() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/cars/${id}`, {
+      await axios.delete(`https://car-spynee.onrender.com/api/cars/${id}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       navigate('/cars');
