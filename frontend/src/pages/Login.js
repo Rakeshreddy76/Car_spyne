@@ -10,7 +10,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://car-spynee.onrender.com/api/users/login', { email, password });
+      const res = await axios.post('https://car-spynee.onrender.com', { email, password });
       localStorage.setItem('token', res.data.token);
       const token = localStorage.getItem('token');
       console.log(token);
