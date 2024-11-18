@@ -188,7 +188,7 @@ function CarDetail() {
   useEffect(() => {
     const fetchCar = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/cars/${id}`, {
+        const res = await axios.get(`https://car-spynee.onrender.com/api/cars/${id}`, {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
         setCar(res.data);
